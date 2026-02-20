@@ -1,0 +1,1402 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nganza Secondary School - Excellence in Education</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #d4af37;
+            --accent: #e74c3c;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --success: #27ae60;
+            --gradient: linear-gradient(135deg, #1a5f7a 0%, #2980b9 100%);
+            --gradient-warm: linear-gradient(135deg, #d4af37 0%, #f39c12 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            color: var(--dark);
+            overflow-x: hidden;
+            background: #fafafa;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            color: white;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(26, 95, 122, 0.3);
+        }
+
+        .logo-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 900;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(26, 95, 122, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(26, 95, 122, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: var(--gradient);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: 2px solid white;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .school-visual {
+            width: 100%;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .school-building {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.1) 100%);
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .building-facade {
+            width: 80%;
+            height: 90%;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .window {
+            background: linear-gradient(135deg, #f39c12 0%, #d4af37 100%);
+            border-radius: 5px;
+            opacity: 0.9;
+            animation: windowGlow 3s ease-in-out infinite;
+        }
+
+        .window:nth-child(odd) {
+            animation-delay: 0.5s;
+        }
+
+        @keyframes windowGlow {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 0.6; }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .stat-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            font-weight: 900;
+        }
+
+        .stat-label {
+            color: white;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Combinations Section */
+        .combinations {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .combinations-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .combination-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .combination-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .combination-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .combination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-color: var(--primary);
+        }
+
+        .combo-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        .combo-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .combo-full {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .combo-subjects {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .subject {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            background: rgba(26, 95, 122, 0.05);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .subject:hover {
+            background: rgba(26, 95, 122, 0.1);
+            transform: translateX(5px);
+        }
+
+        .subject-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--secondary);
+            border-radius: 50%;
+        }
+
+        /* Results Section */
+        .results {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #ecf0f1 0%, #f8f9fa 100%);
+        }
+
+        .results-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .results-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 1rem 2.5rem;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+
+        .tab-button:hover, .tab-button.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 95, 122, 0.3);
+        }
+
+        .results-content {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .result-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 15px;
+            border-left: 5px solid var(--secondary);
+            transition: all 0.3s;
+        }
+
+        .result-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .result-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .result-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .result-stat {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--success);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: var(--dark);
+            color: white;
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-warm);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .enrollment-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group select option {
+            background: var(--dark);
+            color: white;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.25rem;
+            background: var(--gradient-warm);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 20px rgba(26, 95, 122, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: var(--accent);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .close-modal:hover {
+            transform: rotate(90deg);
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-circle">N</div>
+                <div class="logo-text">
+                    <h1>Nganza Secondary</h1>
+                    <p>Excellence</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#combinations">Combinations</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#enrollment" class="cta-button">Enroll Form 5</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2>Welcome to Nganza Secondary School</h2>
+                <p>Nurturing academic excellence and character development in the heart of Tanzania. Join a community committed to transforming futures through quality education.</p>
+                <div class="hero-buttons">
+                    <a href="#enrollment" class="btn-primary">Apply Now for Form 5</a>
+                    <a href="#results" class="btn-secondary">View Results</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="school-visual">
+                    <div class="school-building">
+                        <div class="building-facade">
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                            <div class="window"></div>
+                        </div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">850+</div>
+                            <div class="stat-label">Students</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">45+</div>
+                            <div class="stat-label">Teachers</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Pass Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Combinations Section -->
+    <section class="combinations" id="combinations">
+        <div class="section-header">
+            <h2 class="section-title">Academic Combinations</h2>
+            <p class="section-subtitle">Choose your path to success with our specialized programs</p>
+        </div>
+        <div class="combinations-grid">
+            <!-- PCB Card -->
+            <div class="combination-card">
+                <div class="combo-icon">🧬</div>
+                <h3 class="combo-name">PCB</h3>
+                <p class="combo-full">PHYSICS, CHEMISTRY & BIOLOGY</p>
+                <div class="combo-subjects">
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Physics - Understanding natural laws and mechanics</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Chemistry - Exploring matter and reactions</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Biology - Study of life and living organisms</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Mathematics - Advanced computational skills</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PCM Card -->
+            <div class="combination-card">
+                <div class="combo-icon">📐</div>
+                <h3 class="combo-name">PCM</h3>
+                <p class="combo-full">PHYSICS, CHEMISTRY & MATHEMATICS</p>
+                <div class="combo-subjects">
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Physics - Mastering physical sciences</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Chemistry - Chemical principles and applications</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Advanced Mathematics - Calculus and beyond</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Engineering Drawing - Technical visualization</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EGM Card -->
+            <div class="combination-card">
+                <div class="combo-icon">💼</div>
+                <h3 class="combo-name">EGM</h3>
+                <p class="combo-full">ECONOMICS, GEOGRAPHY & MATHEMATICS</p>
+                <div class="combo-subjects">
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Economics - Financial systems and markets</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Geography - Earth sciences and spatial analysis</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Mathematics - Statistical and analytical methods</span>
+                    </div>
+                    <div class="subject">
+                        <div class="subject-dot"></div>
+                        <span>Commerce - Business fundamentals</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results" id="results">
+        <div class="section-header">
+            <h2 class="section-title">Examination Results</h2>
+            <p class="section-subtitle">Our students' achievements in annual and NECTA examinations</p>
+        </div>
+        <div class="results-container">
+            <div class="results-tabs">
+                <button class="tab-button active" onclick="showResults('annual')">Annual Examinations</button>
+                <button class="tab-button" onclick="showResults('necta2023')">NECTA 2023</button>
+                <button class="tab-button" onclick="showResults('necta2024')">NECTA 2024</button>
+                <button class="tab-button" onclick="showResults('necta2025')">NECTA 2025</button>
+            </div>
+
+            <div class="results-content">
+                <div id="annual-results" class="results-section">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 2rem;">Annual Examination Results 2024/2025</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-year">Form 5 Annual</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Total Students</span>
+                                    <span class="stat-value">285</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">94%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Division I-III</span>
+                                    <span class="stat-value">267</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">Form 6 Annual</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Total Students</span>
+                                    <span class="stat-value">198</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">96%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Division I-III</span>
+                                    <span class="stat-value">190</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">Overall Performance</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>School Ranking</span>
+                                    <span class="stat-value">Top 15</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Regional Position</span>
+                                    <span class="stat-value">3rd</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Merit Students</span>
+                                    <span class="stat-value">42</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="necta2023-results" class="results-section" style="display: none;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 2rem;">NECTA Results 2023</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-year">ACSEE 2023</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Total Candidates</span>
+                                    <span class="stat-value">195</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">92.8%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Division I</span>
+                                    <span class="stat-value">45</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">PCB Performance</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Candidates</span>
+                                    <span class="stat-value">78</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">91%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Top Points</span>
+                                    <span class="stat-value">18.5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">PCM & EGM</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>PCM Pass Rate</span>
+                                    <span class="stat-value">94%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>EGM Pass Rate</span>
+                                    <span class="stat-value">93%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Combined Merit</span>
+                                    <span class="stat-value">117</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="necta2024-results" class="results-section" style="display: none;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 2rem;">NECTA Results 2024</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-year">ACSEE 2024</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Total Candidates</span>
+                                    <span class="stat-value">203</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">95.1%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Division I</span>
+                                    <span class="stat-value">52</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">PCB Excellence</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Candidates</span>
+                                    <span class="stat-value">82</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">93.5%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Top Points</span>
+                                    <span class="stat-value">19.0</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">Regional Recognition</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>School Rank</span>
+                                    <span class="stat-value">2nd</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>National Rank</span>
+                                    <span class="stat-value">Top 20</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Improvement</span>
+                                    <span class="stat-value">+2.3%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="necta2025-results" class="results-section" style="display: none;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--primary); margin-bottom: 2rem;">NECTA Results 2025</h3>
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-year">ACSEE 2025</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Total Candidates</span>
+                                    <span class="stat-value">215</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Pass Rate</span>
+                                    <span class="stat-value">96.7%</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Division I</span>
+                                    <span class="stat-value">58</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">Outstanding Achievement</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>Best Student</span>
+                                    <span class="stat-value">19.5 pts</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Top 10 Regional</span>
+                                    <span class="stat-value">8 Students</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Perfect Scores</span>
+                                    <span class="stat-value">12</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="result-card">
+                            <div class="result-year">Combined Success</div>
+                            <div class="result-stats">
+                                <div class="result-stat">
+                                    <span>All Combinations</span>
+                                    <span class="stat-value">95%+</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>University Selection</span>
+                                    <span class="stat-value">178</span>
+                                </div>
+                                <div class="result-stat">
+                                    <span>Scholarships Won</span>
+                                    <span class="stat-value">23</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Enrollment Section -->
+    <section class="contact" id="contact">
+        <div class="section-header" style="margin-bottom: 3rem;">
+            <h2 class="section-title" style="color: white;">Get In Touch</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.7);">Contact us or apply for Form 5 enrollment</p>
+        </div>
+        <div class="contact-container" id="enrollment">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h3>Location</h3>
+                        <p>Nganza Village, Mbeya Region<br>P.O. Box 1234, Mbeya<br>Tanzania</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h3>Phone</h3>
+                        <p>Main Office: +255 25 250 1234<br>Head Teacher: +255 754 123 456<br>Academic Office: +255 783 987 654</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>info@nganzasecondary.ac.tz<br>admissions@nganzasecondary.ac.tz<br>headteacher@nganzasecondary.ac.tz</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <div class="contact-details">
+                        <h3>Office Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 4:00 PM<br>Saturday: 9:00 AM - 1:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="enrollment-form">
+                <h3 class="form-title">Form 5 Enrollment Application</h3>
+                <form id="enrollmentForm">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Date of Birth *</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender *</label>
+                        <select required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Combination *</label>
+                        <select required>
+                            <option value="">Select combination</option>
+                            <option value="pcb">PCB - Physics, Chemistry & Biology</option>
+                            <option value="pcm">PCM - Physics, Chemistry & Mathematics</option>
+                            <option value="egm">EGM - Economics, Geography & Mathematics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>CSEE Index Number *</label>
+                        <input type="text" placeholder="e.g., S1234/0123/2024" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" placeholder="+255 XXX XXX XXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Parent/Guardian Email</label>
+                        <input type="email" placeholder="parent@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Information</label>
+                        <textarea rows="3" placeholder="Any special requirements or questions..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">&copy; 2025 Nganza Secondary School. All rights reserved.</p>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 1rem;">Empowering minds, transforming futures</p>
+            <div class="social-links">
+                <a href="#" class="social-link">f</a>
+                <a href="#" class="social-link">t</a>
+                <a href="#" class="social-link">in</a>
+                <a href="#" class="social-link">@</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">×</button>
+            <div style="text-align: center; padding: 2rem 0;">
+                <div style="width: 80px; height: 80px; background: var(--success); border-radius: 50%; margin: 0 auto 2rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">✓</div>
+                <h2 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 1rem; font-size: 2rem;">Application Submitted!</h2>
+                <p style="color: #7f8c8d; line-height: 1.8; margin-bottom: 2rem;">Thank you for applying to Nganza Secondary School. Our admissions team will review your application and contact you within 3-5 business days.</p>
+                <button onclick="closeModal()" class="btn-primary">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Results tabs functionality
+        function showResults(type) {
+            const sections = document.querySelectorAll('.results-section');
+            const buttons = document.querySelectorAll('.tab-button');
+            
+            sections.forEach(section => section.style.display = 'none');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(`${type}-results`).style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        // Form submission
+        document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            document.getElementById('successModal').classList.add('active');
+            this.reset();
+        });
+
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modal on outside click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
